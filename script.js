@@ -35,7 +35,6 @@ function Hablar(message){
     setTimeout(()=>{
         const Speech = new SpeechSynthesisUtterance(message);
         console.log("Jarvis dice:  "+message)
-        Speech.lang = ""
         Speech.voice = window.speechSynthesis.getVoices()[9]
         Speech.volume = 1; // 0 to 1
         Speech.rate = 1.1; // 0.1 to 10
@@ -139,7 +138,7 @@ function responder(res){
         Hablar("Remember you have to "+ tareas[Math.floor(Math.random(tareas.length)*tareas.length)].tarea)
         // tirar frase motivadora anashei
         Hablar("and remember sur, the effort of today is the bill of tomorrow")
-        setTimeout(()=>window.open("https://www.youtube.com/watch?v=wHn1_QVoXGM"),8500)
+        setTimeout(()=>window.open("https://www.youtube.com/watch?v=O3bhL1gPdxM"),8500)
     }
 
     //noticias
@@ -148,8 +147,13 @@ function responder(res){
     }
 
     //protocolos
-    if(res.includes("iniciate stadium") || res.includes("iniciate studyng") || res.includes("inicia it study")){
+    //studing
+    if(res.includes("school") || res.includes("college") || res.includes("study")){
         ProtocoloStuding()
+    }
+    //gaming
+    if(res.includes("game") || res.includes("gaming") || res.includes("gamer")){
+        ProtocoloGaming()
     }
 }
 
@@ -181,6 +185,16 @@ function protocoloEmergencia(){
     let url = "https://www.youtube.com/watch?v=K1491Qq4Ch8"
     window.open(url, "_tab")
 }
+
+document.querySelector("#gaming").addEventListener("click",()=>{protocoloGaming()})
+
+function protocoloGaming(){
+    Hablar("Iniciating Gaming protocol...")
+    let url = "https://www.youtube.com/watch?v=K1491Qq4Ch8"
+    window.open(url, "_tab")
+}
+
+
 
 
 // let myListener = function () {
