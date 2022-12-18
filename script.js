@@ -146,6 +146,42 @@ function responder(res){
         Hablar("here you have some of the news for today in the US: " +noticias[Math.floor(Math.random(noticias.length)*10)].description)
     }
 
+
+
+
+
+
+
+
+
+    //ARDUINO
+    if(res.includes("close the door")){
+        AccionarCerradura("ON");
+    }
+    if(res.includes("open the door")){
+        AccionarCerradura("OFF");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //protocolos
     //studing
     if(res.includes("school") || res.includes("college") || res.includes("study")){
