@@ -2,5 +2,5 @@
 
 async function AccionarCerradura(pedido){
     console.log("accionada "+pedido)
-    fetch("http://192.168.0.108/LOCK="+pedido)
+    fetch("http://192.168.0.101/LOCK="+pedido)
 }
